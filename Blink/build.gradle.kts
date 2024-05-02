@@ -25,11 +25,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -44,10 +44,10 @@ dependencies {
 }
 publishing {
     publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.github.rachit-goyal"
-            artifactId = "lib-test"
-            version = "0.1.0"
+        register<MavenPublication>("release") {
+           afterEvaluate{
+               from(components["release"])
+           }
         }
     }
 }
