@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("maven-publish")
 }
 
 android {
@@ -40,4 +41,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.github.rachit-goyal"
+            artifactId = "lib-test"
+            version = "0.1.0"
+        }
+    }
 }
