@@ -12,8 +12,8 @@ import android.widget.Toast
 created by Rachit on 5/2/2024.
  */
 object BlinkEffect {
-    fun blink(context: Context) {
+    fun blink(view: View) {
         // adding the color to be shown
-        Toast.makeText(context, "Blink", Toast.LENGTH_SHORT).show()
+        Toast.makeText(view.context, "Blink", Toast.LENGTH_SHORT).show()
     }
 }
